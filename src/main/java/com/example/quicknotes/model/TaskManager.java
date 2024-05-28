@@ -1,6 +1,7 @@
 package com.example.quicknotes.model;
 
 import java.util.Date;
+import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -70,4 +71,16 @@ public class TaskManager {
 		this.status = status;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		TaskManager that = (TaskManager) o;
+		return Objects.equals(id, that.id) && Objects.equals(title, that.title) && Objects.equals(date, that.date) && Objects.equals(status, that.status);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, title, date, status);
+	}
 }
