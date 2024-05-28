@@ -32,8 +32,8 @@ public class TaskManagerService {
 	}
 
 	public boolean saveOrUpdateTask(TaskManager todo) {
-		TaskManager updatedObj = repo.save(todo);
-		return updatedObj != null;
+		TaskManager updatedTask = repo.save(todo);
+		return updatedTask != null;
 	}
 
 	public boolean deleteTask(Long id) {
