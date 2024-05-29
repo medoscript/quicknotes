@@ -16,7 +16,7 @@ import org.mapstruct.Mapping;
 // и его можно будет внедрить (inject) в другие компоненты
 // с помощью аннотаций Spring, таких как @Autowired.
 public interface TaskMappingService {
-    @Mapping(target = "taskId", source = "id") //target = "taskId" указывает на поле в целевом объекте (TaskDto)
+
     // source = "id" указывает на поле в исходном объекте (TaskManager).
     public TaskDto mapTaskToDto(TaskManager task);
 

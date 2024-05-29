@@ -3,35 +3,33 @@ package com.example.quicknotes.model;
 import java.util.Date;
 import java.util.Objects;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 @Table (name="task")
 public class TaskManager {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Nonnull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "task_generator")
+//	@SequenceGenerator(name="task_generator", sequenceName = "task_seq", allocationSize=1)
 	private Long id;
 	
-	@Column
-	@Nonnull
+	@Column(name = "title")
+	@NotNull(message = "Title cannot be null")
 	private String title;
 	
-	@Column
+	@Column(name = "date")
 	@Nonnull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 
-	@Column
+	@Column(name = "status")
 	@Nonnull
 	private String status;
 //

@@ -5,44 +5,44 @@ import java.util.Objects;
 
 public class TaskDto {
 
-    private Long taskId;
-    private String taskTitle;
-    private Date dateOfTask;
-    private String statusOfTask;
+    private Long id;
+    private String title;
+    private Date date;
+    private String status;
 
     public TaskDto() {
     }
 
-    public Long getTaskId() {
-        return taskId;
+    public Long getId() {
+        return id;
     }
 
-    public void setTaskId(Long taskId) {
-        this.taskId = taskId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getTaskTitle() {
-        return taskTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTaskTitle(String taskTitle) {
-        this.taskTitle = taskTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public Date getDateOfTask() {
-        return dateOfTask;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateOfTask(Date dateOfTask) {
-        this.dateOfTask = dateOfTask;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getStatusOfTask() {
-        return statusOfTask;
+    public String getStatus() {
+        return status;
     }
 
-    public void setStatusOfTask(String statusOfTask) {
-        this.statusOfTask = statusOfTask;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -50,16 +50,16 @@ public class TaskDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaskDto taskDto = (TaskDto) o;
-        return Objects.equals(taskId, taskDto.taskId) && Objects.equals(taskTitle, taskDto.taskTitle) && Objects.equals(dateOfTask, taskDto.dateOfTask) && Objects.equals(statusOfTask, taskDto.statusOfTask);
+        return Objects.equals(id, taskDto.id) && Objects.equals(title, taskDto.title) && Objects.equals(date, taskDto.date) && Objects.equals(status, taskDto.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, taskTitle, dateOfTask, statusOfTask);
+        return Objects.hash(id, title, date, status);
     }
 
     @Override
     public String toString() {
-        return String.format("ID - %d, Title - %s, status - %s" , taskId, taskTitle, statusOfTask);
+        return String.format("ID - %d, Title - %s, status - %s" , id, title, status);
     }
 }

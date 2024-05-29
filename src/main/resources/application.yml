@@ -10,4 +10,4 @@ spring:
     properties:
       hibernate:
         auto_quote_keyword: true
-
+        ddl-auto: = update

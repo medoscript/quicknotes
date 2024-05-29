@@ -17,8 +17,12 @@ import java.util.List;
 //@RequestMapping("/tasks") указывает базовый путь для всех методов в этом контроллере.
 public class TaskManagerController {
 
-    @Autowired
+
     private TaskManagerService service;
+
+    public TaskManagerController(TaskManagerService service) {
+        this.service = service;
+    }
 
     @GetMapping
     public List<TaskDto> viewAllTasks() {
@@ -46,9 +50,14 @@ public class TaskManagerController {
     }
 
     @PostMapping("/save")
+
     public TaskDto saveTask(@RequestBody TaskDto taskDto) {
         return service.saveTask(taskDto);
-
+        //Аннотация @PostMapping("/save") указывает, что метод контроллера
+        // должен обрабатывать POST-запросы, поступающие на URL /tasks/save.
+        // Метод помеченный этой аннотацией, принимает объект данных из тела
+        // запроса с помощью аннотации @RequestBody, сохраняет его
+        // и возвращает в ответе.
     }
 
 //    @GetMapping("/{id}")
