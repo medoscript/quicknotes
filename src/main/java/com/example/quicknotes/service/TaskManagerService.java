@@ -40,11 +40,13 @@ public class TaskManagerService {
 			throw new RuntimeException("Task not found");
 		}
 		TaskManager updateTask = repository.findById(taskDto.getId()).orElseThrow(()
-				-> new RuntimeException("Task not found"));
+				-> new RuntimeException("Task in repository not found"));
 
 		updateTask.setTitle(taskDto.getTitle());
 		updateTask.setDate(taskDto.getDate());
+		repository.save(updateTask);
 	}
+
 	@Transactional
 	public void updateStatus(Long id) {
 		TaskManager todo = getTaskById(id);

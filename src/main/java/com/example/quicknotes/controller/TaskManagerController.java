@@ -1,9 +1,7 @@
 package com.example.quicknotes.controller;
 
-import com.example.quicknotes.model.TaskManager;
 import com.example.quicknotes.model.dto.TaskDto;
 import com.example.quicknotes.service.TaskManagerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +22,12 @@ public class TaskManagerController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<TaskDto> viewAllTasks() {
         return service.getAllTasks();
     }
 
-    @PostMapping("/{id}/update")
+    @PutMapping("/{id}/update")
     public String updateTask(@RequestBody TaskDto dto) {
         service.updateTask(dto);
         return "Task update is a success";
@@ -50,7 +48,6 @@ public class TaskManagerController {
     }
 
     @PostMapping("/save")
-
     public TaskDto saveTask(@RequestBody TaskDto taskDto) {
         return service.saveTask(taskDto);
         //Аннотация @PostMapping("/save") указывает, что метод контроллера
