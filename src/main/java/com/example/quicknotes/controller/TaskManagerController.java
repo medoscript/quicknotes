@@ -1,5 +1,6 @@
 package com.example.quicknotes.controller;
 
+import com.example.quicknotes.model.TaskManager;
 import com.example.quicknotes.model.dto.TaskDto;
 import com.example.quicknotes.service.TaskManagerService;
 import org.springframework.http.HttpStatus;
@@ -57,11 +58,11 @@ public class TaskManagerController {
         // и возвращает в ответе.
     }
 
-//    @GetMapping("/{id}")
-//    public TaskManager getTaskById(@PathVariable Long id) {
-//        return service.getTaskById(id);
-//    }
-//
+    @GetMapping("/{id}")
+    public TaskManager getTaskById(@PathVariable Long id) {
+        return service.getTaskById(id);
+    }
+
 //    @PostMapping("/{id}/edit")
 //    public String editSaveTask(@RequestBody TaskManager todo) {
 //        if (service.saveOrUpdateTask(todo)) {
@@ -71,12 +72,12 @@ public class TaskManagerController {
 //        }
 //    }
 //
-//    @DeleteMapping("/delete{id}")
-//    public String deleteTask(@PathVariable Long id) {
-//        if (service.deleteTask(id)) {
-//            return "Delete Success";
-//        } else {
-//            return "Delete Failure";
-//        }
-
+    @DeleteMapping("/delete{id}")
+    public String deleteTask(@PathVariable Long id) {
+        if (service.deleteTask(id)) {
+            return "Delete Success";
+        } else {
+            return "Delete Failure";
+        }
+    }
 }
