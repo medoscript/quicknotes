@@ -34,7 +34,7 @@ public class TaskManagerService {
 		return repository.findById(id).orElse(null);
 	}
 
-	public void updateTask(TaskDto taskDto) {
+	public TaskDto updateTask(TaskDto taskDto) {
 		Long id = taskDto.getId();
 		if (id == null || id < 1) {
 			throw new RuntimeException("Task not found");
@@ -45,6 +45,7 @@ public class TaskManagerService {
 		updateTask.setTitle(taskDto.getTitle());
 		updateTask.setDate(taskDto.getDate());
 		repository.save(updateTask);
+		return taskDto;
 	}
 
 	@Transactional

@@ -28,14 +28,14 @@ public class TaskManagerController {
         return service.getAllTasks();
     }
 
-    @PutMapping("/{id}/update")
+    @PutMapping("/update/{id}")
     public String updateTask(@RequestBody TaskDto dto) {
         service.updateTask(dto);
         return "Task update is a success";
-        }
+    }
 
 
-    @PostMapping("/{id}/Status_update")
+    @PostMapping("status-update/{id}")
     public ResponseEntity<String> updateTaskStatus(@PathVariable Long id, @RequestBody TaskDto statusUpdateDto) {
         try {
             service.updateStatus(id);
@@ -63,7 +63,7 @@ public class TaskManagerController {
         return service.getTaskById(id);
     }
 
-//    @PostMapping("/{id}/edit")
+    //    @PostMapping("/{id}/edit")
 //    public String editSaveTask(@RequestBody TaskManager todo) {
 //        if (service.saveOrUpdateTask(todo)) {
 //            return "Edit Success";
@@ -72,7 +72,7 @@ public class TaskManagerController {
 //        }
 //    }
 //
-    @DeleteMapping("/delete{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteTask(@PathVariable Long id) {
         if (service.deleteTask(id)) {
             return "Delete Success";
