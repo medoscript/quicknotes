@@ -43,11 +43,7 @@ public class TaskManagerController {
     @PostMapping("/save")
     public TaskDto saveTask(@RequestBody TaskDto taskDto) {
         return service.saveTask(taskDto);
-        //Аннотация @PostMapping("/save") указывает, что метод контроллера
-        // должен обрабатывать POST-запросы, поступающие на URL /tasks/save.
-        // Метод помеченный этой аннотацией, принимает объект данных из тела
-        // запроса с помощью аннотации @RequestBody, сохраняет его
-        // и возвращает в ответе.
+
     }
 
     @GetMapping("/{id}")
@@ -55,15 +51,7 @@ public class TaskManagerController {
         return service.getTaskById(id);
     }
 
-    //    @PostMapping("/{id}/edit")
-//    public String editSaveTask(@RequestBody TaskManager todo) {
-//        if (service.saveOrUpdateTask(todo)) {
-//            return "Edit Success";
-//        } else {
-//            return "Edit Failure";
-//        }
-//    }
-//
+
     @DeleteMapping("/delete/{id}")
     public String deleteTask(@PathVariable Long id) {
         if (service.deleteTask(id)) {

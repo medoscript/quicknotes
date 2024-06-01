@@ -50,15 +50,6 @@ public class TaskManagerService {
 		return taskDto;
 	}
 
-	@Transactional
-	public void updateStatus(Long id) {
-		TaskManager todo = getTaskById(id);
-		if (todo != null) {
-			todo.setStatus("Completed");
-			repository.save(todo);
-		}
-	}
-
 
 	public TaskDto saveTask(TaskDto taskDto) {
 		TaskManager task = mappingService.mapDtoToTask(taskDto);
