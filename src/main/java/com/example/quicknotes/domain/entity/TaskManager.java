@@ -1,4 +1,4 @@
-package com.example.quicknotes.model;
+package com.example.quicknotes.domain.entity;
 
 import java.util.Date;
 import java.util.Objects;
@@ -32,6 +32,16 @@ public class TaskManager {
 	@Column(name = "status")
 	@Nonnull
 	private String status;
+
+	@Column(name = "image")
+	private String image;
+
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 //
 	public TaskManager() {
 		

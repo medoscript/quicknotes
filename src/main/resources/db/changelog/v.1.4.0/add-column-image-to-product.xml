@@ -4,10 +4,14 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <include file="v.1.0.0/changelog.xml" relativeToChangelogFile="true"/>
-    <include file="v.1.2.0/changelog.xml" relativeToChangelogFile="true"/>
-    <include file="v.1.3.0/changelog.xml" relativeToChangelogFile="true"/>
-    <include file="v.1.4.0/changelog.xml" relativeToChangelogFile="true"/>
+    <changeSet id="add_columns_is_active_email_to_user" author="test">
 
+        <addColumn tableName="product">
+            <column name="image" type="varchar(128)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
 
 </databaseChangeLog>

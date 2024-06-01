@@ -1,4 +1,4 @@
-package com.example.quicknotes.model.dto;
+package com.example.quicknotes.domain.dto;
 
 import java.util.Date;
 import java.util.Objects;

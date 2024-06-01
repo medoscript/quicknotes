@@ -1,7 +1,7 @@
 package com.example.quicknotes.service.mapping;
 
-import com.example.quicknotes.model.TaskManager;
-import com.example.quicknotes.model.dto.TaskDto;
+import com.example.quicknotes.domain.entity.TaskManager;
+import com.example.quicknotes.domain.dto.TaskDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

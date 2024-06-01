@@ -1,7 +1,7 @@
 package com.example.quicknotes.controller;
 
-import com.example.quicknotes.model.TaskManager;
-import com.example.quicknotes.model.dto.TaskDto;
+import com.example.quicknotes.domain.entity.TaskManager;
+import com.example.quicknotes.domain.dto.TaskDto;
 import com.example.quicknotes.service.TaskManagerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
