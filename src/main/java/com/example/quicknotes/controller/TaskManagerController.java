@@ -29,24 +29,16 @@ public class TaskManagerController {
     }
 
     @PutMapping("/update/{id}")
-    public String updateTask(@RequestBody TaskDto dto) {
-        service.updateTask(dto);
-        return "Task update is a success";
-    }
-
-
-    @PostMapping("status-update/{id}")
-    public ResponseEntity<String> updateTaskStatus(@PathVariable Long id, @RequestBody TaskDto statusUpdateDto) {
+    public ResponseEntity<TaskDto> updateTask(@PathVariable Long id, @RequestBody TaskDto taskDto) {
         try {
-            service.updateStatus(id);
-            return ResponseEntity.ok("Task status updated successfully");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task not found");
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred while updating the task status");
-//        }
+            taskDto.setId(id); // Устанавливаем id из URL в DTO
+            TaskDto updatedTask = service.updateTask(taskDto);
+            return ResponseEntity.ok(updatedTask);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }
+
 
     @PostMapping("/save")
     public TaskDto saveTask(@RequestBody TaskDto taskDto) {

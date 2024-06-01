@@ -39,11 +39,13 @@ public class TaskManagerService {
 		if (id == null || id < 1) {
 			throw new RuntimeException("Task not found");
 		}
-		TaskManager updateTask = repository.findById(taskDto.getId()).orElseThrow(()
-				-> new RuntimeException("Task in repository not found"));
+		TaskManager updateTask = repository.findById(taskDto.getId()).orElseThrow(() ->
+				new RuntimeException("Task in repository not found"));
 
 		updateTask.setTitle(taskDto.getTitle());
 		updateTask.setDate(taskDto.getDate());
+		updateTask.setStatus(taskDto.getStatus());
+
 		repository.save(updateTask);
 		return taskDto;
 	}
