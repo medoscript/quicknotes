@@ -6,7 +6,7 @@
 
     <changeSet id="add_columns_is_active_email_to_user" author="test">
 
-        <addColumn tableName="product">
+        <addColumn tableName="task">
             <column name="image" type="varchar(128)">
                 <constraints nullable="true"/>
             </column>

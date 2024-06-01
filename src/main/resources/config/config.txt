@@ -1,0 +1,4 @@
+-Dspring.profiles.active=dev
+
+
+do.accessKey=DO0046QABX6TDHBECJGE;do.secretKey=LOBmVzuaLjl1R+q90uykXmMsLxnkdGVw80N8CMXNIJo;do.endpoint=https://fra1.digitaloceanspaces.com;do.region=fra1
