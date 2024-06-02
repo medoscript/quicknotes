@@ -42,33 +42,17 @@ public class SecurityConfig {
                 .sessionManagement(x -> x
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(x -> x
-//                        .requestMatchers(HttpMethod.GET, "/tasks/all").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/tasks").hasAnyRole("ADMIN", "USER")
-//                        .requestMatchers(HttpMethod.POST, "/tasks", "/files").hasRole("ADMIN")
-//                        .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/access", "/register").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/hello").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/tasks/all").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/tasks").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.POST, "/tasks", "/files").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/access", "/register").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/hello").permitAll()
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-//                        .anyRequest().authenticated())
-                .anyRequest().permitAll())
+                        .anyRequest().authenticated())
+//                .anyRequest().permitAll())
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .addFilterAfter(filter, UsernamePasswordAuthenticationFilter.class)
                 .build();
-//    }
-
-    // Конфигурация для базовой авторизации
-//    @Bean
-//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        return http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .sessionManagement(x -> x
-//                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .authorizeHttpRequests(x -> x
-//                        .requestMatchers(HttpMethod.GET, "/products/all").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/products").hasAnyRole("ADMIN", "USER")
-//                        .requestMatchers(HttpMethod.POST, "/products").hasRole("ADMIN")
-//                        .anyRequest().authenticated())
-//                .httpBasic(Customizer.withDefaults())
-//                .build();
 
     }
 @Bean
