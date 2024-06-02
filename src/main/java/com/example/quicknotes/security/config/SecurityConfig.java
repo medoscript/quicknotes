@@ -42,9 +42,9 @@ public class SecurityConfig {
                 .sessionManagement(x -> x
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(x -> x
-//                        .requestMatchers(HttpMethod.GET, "/products/all").permitAll()
-//                        .requestMatchers(HttpMethod.GET, "/products").hasAnyRole("ADMIN", "USER")
-//                        .requestMatchers(HttpMethod.POST, "/products", "/files").hasRole("ADMIN")
+//                        .requestMatchers(HttpMethod.GET, "/tasks/all").permitAll()
+//                        .requestMatchers(HttpMethod.GET, "/tasks").hasAnyRole("ADMIN", "USER")
+//                        .requestMatchers(HttpMethod.POST, "/tasks", "/files").hasRole("ADMIN")
 //                        .requestMatchers(HttpMethod.POST, "/auth/login", "/auth/access", "/register").permitAll()
 //                        .requestMatchers(HttpMethod.GET, "/hello").permitAll()
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**").permitAll()
@@ -79,9 +79,9 @@ public OpenAPI openAPI() {
                     ("Bearer Authentication", createAPIKeyScheme()))
             .info(new Info().title("JWT demo app")
                     .description("Demo application for JSON web tokens")
-                    .version("1.0.0").contact(new Contact().name("Andrey Pomelov")
-                            .email( "andrey.pomelov@ait-tr.de").url("https://www.ait-tr.de/"))
-                    .license(new License().name("@AndreyPomelov")
+                    .version("1.0.0").contact(new Contact().name("Mihail Romanciuc")
+                            .email( "roman.mihail@yahoo.com").url("https://www.ait-tr.de/"))
+                    .license(new License().name("@MihailRomanciuc")
                             .url("https://www.ait-tr.de/")));
 }
 

@@ -30,7 +30,7 @@ public class FileServiceImpl implements FileService {
 
             String uniqueFileName = generateUniqueFileName(file);
 
-//            Files.copy(file.getInputStream(), Path.of("C:\\Users\\BESPREDEL\\Desktop\\g_38_jp_shop\\files\\" +
+//            Files.copy(file.getInputStream(), Path.of("C:\\Users\\BESPREDEL\\Desktop\\quicknotes\\files\\" +
 //                    uniqueFileName));
 
             ObjectMetadata metadata = new ObjectMetadata();

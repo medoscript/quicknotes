@@ -19,7 +19,6 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 
@@ -43,13 +42,12 @@ class QuickNotesAppTest {
 
 	private TestRestTemplate template;
 	private HttpHeaders headers;
-	private TaskDto testProduct;
+	private TaskDto testTask;
 
 	private String adminAccessToken;
 	private String userAccessToken;
 
-	private final String TEST_PRODUCT_TITLE = "Test product";
-	private final BigDecimal TEST_PRODUCT_PRICE = new BigDecimal(777);
+	private final String TEST_TASK_TITLE = "Test task";
 	private final String ADMIN_NAME = "Test Admin";
 	private final String USER_NAME = "Test User";
 	private final String TEST_PASSWORD = "Test password";
@@ -58,7 +56,7 @@ class QuickNotesAppTest {
 
 	private final String URL_PREFIX = "http://localhost:";
 	private final String AUTH_RESOURCE_NAME = "/auth";
-	private final String PRODUCTS_RESOURCE_NAME = "/products";
+	private final String TASK_RESOURCE_NAME = "/tasks";
 	private final String LOGIN_ENDPOINT = "/login";
 	private final String ACCESS_ENDPOINT = "/access";
 	private final String ALL_ENDPOINT = "/all";
@@ -71,8 +69,8 @@ class QuickNotesAppTest {
 		template = new TestRestTemplate();
 		headers = new HttpHeaders();
 
-		testProduct = new TaskDto();
-		testProduct.setTitle(TEST_PRODUCT_TITLE);
+		testTask = new TaskDto();
+		testTask.setTitle(TEST_TASK_TITLE);
 
 
 		BCryptPasswordEncoder encoder = null;
@@ -132,9 +130,9 @@ class QuickNotesAppTest {
 	}
 
 	@Test
-	public void positiveGettingAllProductsWithoutAuthorization() {
+	public void positiveGettingAllTasksWithoutAuthorization() {
 
-		String url = URL_PREFIX + port + PRODUCTS_RESOURCE_NAME + ALL_ENDPOINT;
+		String url = URL_PREFIX + port + TASK_RESOURCE_NAME + ALL_ENDPOINT;
 		HttpEntity<Object> request = new HttpEntity<>(headers);
 
 		ResponseEntity<Object> response = template
@@ -145,10 +143,10 @@ class QuickNotesAppTest {
 	}
 
 	@Test
-	public void negativeSavingProductWithoutAuthorization() {
+	public void negativeSavingTaskWithoutAuthorization() {
 
-		String url = URL_PREFIX + port + PRODUCTS_RESOURCE_NAME;
-		HttpEntity<TaskDto> request = new HttpEntity<>(testProduct, headers);
+		String url = URL_PREFIX + port + TASK_RESOURCE_NAME;
+		HttpEntity<TaskDto> request = new HttpEntity<>(testTask, headers);
 
 		ResponseEntity<TaskDto> response = template
 				.exchange(url, HttpMethod.POST, request, TaskDto.class);
@@ -158,11 +156,11 @@ class QuickNotesAppTest {
 	}
 
 	@Test
-	public void positiveSavingProductWithAdminAuthorization() {
+	public void positiveSavingTaskWithAdminAuthorization() {
 
-		String url = URL_PREFIX + port + PRODUCTS_RESOURCE_NAME;
+		String url = URL_PREFIX + port + TASK_RESOURCE_NAME;
 		headers.put(AUTH_HEADER_NAME, List.of(adminAccessToken));
-		HttpEntity<TaskDto> request = new HttpEntity<>(testProduct, headers);
+		HttpEntity<TaskDto> request = new HttpEntity<>(testTask, headers);
 
 		ResponseEntity<TaskDto> response = template
 				.exchange(url, HttpMethod.POST, request, TaskDto.class);
@@ -171,7 +169,7 @@ class QuickNotesAppTest {
 
 		TaskDto savedProduct = response.getBody();
 		assertNotNull(savedProduct);
-		assertEquals(TEST_PRODUCT_TITLE, savedProduct.getTitle());
+		assertEquals(TEST_TASK_TITLE, savedProduct.getTitle());
 		assertNotNull(savedProduct.getId());
 	}
 }
