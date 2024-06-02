@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/quicknotes
+    url: jdbc:postgresql://localhost:5432/g_38_jp_shop
     username: postgres
     driver-class-name: org.postgresql.Driver
     password: qwerty007
@@ -11,3 +11,12 @@ spring:
       hibernate:
         auto_quote_keyword: true
 
+key:
+  access: zgXveUgNrHX8CvnClpJLyvnE3gx7IHqz38TxxPb8s3Y=
+  refresh: 4vhupBx1DbjoxwemKKeAZuZIFYr22aLfEF1J/1tntg8=
+
+logging:
+  file:
+    name: logs/log.txt
+  level:
+    root: info
