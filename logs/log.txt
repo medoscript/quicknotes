@@ -1,0 +1,41 @@
+2024-06-02T21:52:37.126+02:00  INFO 18456 --- [restartedMain] com.example.quicknotes.QuickNotesApp     : Starting QuickNotesApp using Java 21.0.2 with PID 18456 (C:\Users\BESPREDEL\Desktop\quicknotes\target\classes started by BESPREDEL in C:\Users\BESPREDEL\Desktop\quicknotes)
+2024-06-02T21:52:37.129+02:00  INFO 18456 --- [restartedMain] com.example.quicknotes.QuickNotesApp     : The following 1 profile is active: "dev"
+2024-06-02T21:52:37.192+02:00  INFO 18456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-02T21:52:37.192+02:00  INFO 18456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-02T21:52:38.302+02:00  INFO 18456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-02T21:52:38.389+02:00  INFO 18456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 4 JPA repository interfaces.
+2024-06-02T21:52:39.570+02:00  INFO 18456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2024-06-02T21:52:39.582+02:00  INFO 18456 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-02T21:52:39.582+02:00  INFO 18456 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-06-02T21:52:39.849+02:00  INFO 18456 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-06-02T21:52:39.855+02:00  INFO 18456 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-02T21:52:39.856+02:00  INFO 18456 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2663 ms
+2024-06-02T21:52:40.019+02:00  INFO 18456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-02T21:52:40.254+02:00  INFO 18456 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34bed4ce
+2024-06-02T21:52:40.256+02:00  INFO 18456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-02T21:52:40.471+02:00  INFO 18456 --- [restartedMain] liquibase.database                       : Set default schema name to public
+2024-06-02T21:52:40.574+02:00  INFO 18456 --- [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2024-06-02T21:52:41.257+02:00  INFO 18456 --- [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2024-06-02T21:52:41.323+02:00  INFO 18456 --- [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2024-06-02T21:52:41.450+02:00  INFO 18456 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-02T21:52:41.512+02:00  INFO 18456 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2024-06-02T21:52:41.851+02:00  INFO 18456 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2024-06-02T21:52:42.609+02:00  INFO 18456 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-06-02T21:52:42.620+02:00  INFO 18456 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-02T21:52:44.435+02:00  WARN 18456 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-02T21:52:44.972+02:00  INFO 18456 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7826495c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b0afd67, org.springframework.security.web.context.SecurityContextHolderFilter@32101033, org.springframework.security.web.header.HeaderWriterFilter@6e5cfefc, org.springframework.security.web.authentication.logout.LogoutFilter@7447b1a9, com.example.quicknotes.security.sec_filter.TokenFilter@10b2a06f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54592c50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@258aa729, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@425d122b, org.springframework.security.web.session.SessionManagementFilter@20986f5e, org.springframework.security.web.access.ExceptionTranslationFilter@13bf5c8a, org.springframework.security.web.access.intercept.AuthorizationFilter@71db14b1]
+2024-06-02T21:52:45.357+02:00  WARN 18456 --- [restartedMain] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.check-template-location=false)
+2024-06-02T21:52:45.508+02:00  INFO 18456 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-06-02T21:52:45.554+02:00  INFO 18456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-02T21:52:45.565+02:00  INFO 18456 --- [restartedMain] com.example.quicknotes.QuickNotesApp     : Started QuickNotesApp in 9.03 seconds (process running for 10.367)
+2024-06-02T21:53:09.707+02:00  INFO 18456 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-02T21:53:09.708+02:00  INFO 18456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-02T21:53:09.709+02:00  INFO 18456 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-02T21:53:17.980+02:00  INFO 18456 --- [http-nio-8080-exec-3] c.e.quicknotes.logging.AspectLogging     : Method getAllTasks of the class TaskManagerService was called
+2024-06-02T21:53:17.980+02:00  INFO 18456 --- [http-nio-8080-exec-3] c.e.quicknotes.logging.AspectLogging     : Method getAllTasks of the class TaskManagerService was called
+2024-06-02T21:53:18.091+02:00  INFO 18456 --- [http-nio-8080-exec-3] c.e.quicknotes.logging.AspectLogging     : Method getAllTasks of the class TaskManagerService successfully returned result [ID - 1, Title - Test, status - Pending, ID - 2, Title - nicoleta, status - Bine]
+2024-06-02T21:53:18.092+02:00  INFO 18456 --- [http-nio-8080-exec-3] c.e.quicknotes.logging.AspectLogging     : Method getAllTasks of the class TaskManagerService finished its work
+2024-06-02T21:53:18.092+02:00  INFO 18456 --- [http-nio-8080-exec-3] c.e.quicknotes.logging.AspectLogging     : Method getAllTasks of the class TaskManagerService finished its work
+2024-06-02T21:53:32.258+02:00  INFO 18456 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-02T21:53:32.263+02:00  INFO 18456 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-02T21:53:32.267+02:00  INFO 18456 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
